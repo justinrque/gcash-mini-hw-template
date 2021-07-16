@@ -7,6 +7,9 @@
         <module>api-gateway</module>
         <module>activity</module>
         <module>account-management</module>
+        <module>purchase</module>
+        <module>product</module>
+        <module>transfer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

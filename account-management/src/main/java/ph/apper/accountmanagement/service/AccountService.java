@@ -1,6 +1,7 @@
 package ph.apper.accountmanagement.service;
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -8,8 +9,6 @@ import ph.apper.accountmanagement.data.Account;
 import ph.apper.accountmanagement.payload.AccountRequest;
 import ph.apper.accountmanagement.payload.GetAccountResponse;
 import ph.apper.accountmanagement.payload.NewAccountResponse;
-import ph.apper.accountmanagement.service.IdService;
-import ph.apper.accountmanagement.service.VerificationService;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -38,14 +37,13 @@ public class AccountService {
         account.setLastName(request.getLastName());
         account.setEmail(request.getEmail());
         account.setPassword(request.getPassword());
-        account.setBalance(new BigDecimal("25000.00"));
+        account.setBalance(new BigDecimal("50000.00"));
         account.setVerified(false);
 
         String verificationCode = idService.generateCode(6);
         verificationService.addVerificationCode(request.getEmail(), verificationCode);
         accounts.add(account);
         return new NewAccountResponse(verificationCode);
-
     }
 
     public void verify(String email){

@@ -1,6 +1,5 @@
 package ph.apper.accountmanagement;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -45,8 +44,8 @@ public class AccountManagementController {
     @PostMapping("/verify")
     public ResponseEntity<Object> verifyAccount(@RequestBody VerifyAccount request){
         for (Account account : accountList){
-            if(account.getVerificationCode().equalsIgnoreCase(request.getVerificationCode())
-                    && account.getEmail().equalsIgnoreCase(request.getEmail())){
+            if(account.getVerificationCode().equals(request.getVerificationCode())
+                    && account.getEmail().equals(request.getEmail())){
                 return new ResponseEntity<>(HttpStatus.OK);
             }
         }

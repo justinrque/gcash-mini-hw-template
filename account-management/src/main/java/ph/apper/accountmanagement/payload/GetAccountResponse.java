@@ -1,6 +1,5 @@
 package ph.apper.accountmanagement.payload;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import ph.apper.accountmanagement.data.Account;

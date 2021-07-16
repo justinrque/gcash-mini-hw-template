@@ -8,6 +8,7 @@ public class NewAccountResponse {
     public NewAccountResponse(String verificationCode){
         this.verificationCode = verificationCode;
     }
+
     @JsonProperty(value = "verificationCode")
     private String verificationCode;
 }
